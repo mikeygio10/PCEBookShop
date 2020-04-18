@@ -51,7 +51,7 @@ class BookShopCommand extends BaseCommand
                                 return;
                             }
                             $item = Item::get(Item::BOOK);
-                            $item->setCustomName(TextFormat::RESET . Utils::getColorFromRarity($type) . $name . " Custom Enchants Book" . TextFormat::RESET);
+                            $item->setCustomName(TextFormat::RESET . Utils::getColorFromRarity($type) . $name . " Enchantment Book" . TextFormat::RESET);
                             $item->setLore(["Tap the ground to get a random custom enchantment."]);
                             $item->getNamedTag()->setInt("pcebookshop", $type);
                             $inventory = $player->getInventory();
