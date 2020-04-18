@@ -66,15 +66,15 @@ class BookShopCommand extends BaseCommand
                         }
                     }
                 });
-                $form->setTitle(TextFormat::GREEN . "PCEBookShop - Purchase Confirmation");
-                $form->setContent("Are you sure you want to purchase " . Utils::getColorFromRarity($type) . $name . " Custom Enchants Book" . TextFormat::RESET . " for $" . $cost . "?");
+                $form->setTitle(TextFormat::GREEN . "CEShop - Purchase Confirmation");
+                $form->setContent("Are you sure you want to purchase " . Utils::getColorFromRarity($type) . $name . " Custom Enchants" . TextFormat::RESET . " for $" . $cost . "?");
                 $form->setButton1("Yes");
                 $form->setButton2("No");
                 $player->sendForm($form);
                 return;
             }
         });
-        $form->setTitle(TextFormat::GREEN . "PCEBookShop - Menu");
+        $form->setTitle(TextFormat::GREEN . "CEShop - Menu");
         foreach (Utils::RARITY_NAMES as $rarity => $name) {
             $cost = $this->plugin->getConfig()->getNested('cost.' . strtolower($name));
             $form->addButton(Utils::getColorFromRarity($rarity) . $name . TextFormat::EOL . TextFormat::RESET . "Cost: " . $this->plugin->getEconomyProvider()->getMonetaryUnit() . $cost);
