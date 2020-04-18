@@ -20,7 +20,7 @@ class BookShopCommand extends BaseCommand
     /** @var PCEBookShop */
     private $plugin;
 
-    public function __construct(PCEBookShop $plugin, string $name, string $description = "", array $aliases = [])
+    public function __construct(CEShop $plugin, string $name, string $description = "", array $aliases = [])
     {
         $this->plugin = $plugin;
         parent::__construct($name, $description, $aliases);
