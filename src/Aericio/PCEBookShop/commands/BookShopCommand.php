@@ -53,7 +53,7 @@ class BookShopCommand extends BaseCommand
                             $item = Item::get(Item::BOOK);
                             $item->setCustomName(TextFormat::RESET . Utils::getColorFromRarity($type) . $name . " Enchantment Book" . TextFormat::RESET);
                             $item->setLore(["Tap the ground to get a random custom enchantment."]);
-                            $item->getNamedTag()->setInt("pcebookshop", $type);
+                            $item->getNamedTag()->setInt("CustomEnchant", $type);
                             $inventory = $player->getInventory();
                             if ($inventory->canAddItem($item)) {
                                 $economyProvider->takeMoney($player, $cost);
